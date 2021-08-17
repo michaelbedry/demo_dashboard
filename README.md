@@ -1,4 +1,4 @@
-# demo_calendar
+# demo_dashboard
 
 A new Flutter project.
 
