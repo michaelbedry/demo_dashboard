@@ -1,17 +1,37 @@
-import 'package:demo_dashboard/presentation/core/widgets/demo_scaffold.dart';
 import 'package:flutter/material.dart';
+
+import '../core/widgets/custom_sensor_widget.dart';
+import '../core/widgets/demo_scaffold.dart';
 
 class Page1 extends StatelessWidget {
   const Page1({Key? key}) : super(key: key);
 
   Widget _buildContent(BuildContext context) {
-    return Container(
-        child: Center(
-      child: Text(
-        'This is page 1',
-        style: TextStyle(fontSize: 16),
-      ),
-    ));
+    return MediaQuery.of(context).orientation == Orientation.landscape
+        ? Column(
+            children: [
+              Row(
+                children: [
+                  CustomSensorWidget(title: 'Blood Pressure'),
+                  CustomSensorWidget(title: 'Heart Rate'),
+                ],
+              ),
+              Row(
+                children: [
+                  CustomSensorWidget(title: 'Oyxgen Level'),
+                  CustomSensorWidget(title: 'Galvanic Skin Response'),
+                ],
+              ),
+            ],
+          )
+        : Column(
+            children: [
+              CustomSensorWidget(title: 'Blood Pressure'),
+              CustomSensorWidget(title: 'Heart Rate'),
+              CustomSensorWidget(title: 'Oyxgen Level'),
+              CustomSensorWidget(title: 'Galvanic Skin Response'),
+            ],
+          );
   }
 
   @override

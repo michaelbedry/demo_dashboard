@@ -1,9 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:demo_dashboard/presentation/core/routes/app_router.gr.dart';
 import 'package:flutter/material.dart';
 
+import '../routes/app_router.gr.dart';
 import 'app_drawer.dart';
-import 'build_title.dart';
 
 class DemoScaffold extends StatelessWidget {
   final Widget content;
@@ -126,7 +125,7 @@ class DemoScaffold extends StatelessWidget {
   }
 
   AppBar _buildOverviewAppBar(BuildContext context) {
-    return AppBar(
+    return AppBar( 
       leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop()),
